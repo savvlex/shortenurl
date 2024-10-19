@@ -92,3 +92,32 @@ Redirect to the original URL.
   ```
 
   Response: Redirects to `https://example.com`
+
+
+
+## Attention
+
+If your browser is not processing the redirect, try the following steps:
+
+1. **Switch Browser**  
+   Try using a different browser to see if the redirect works correctly. Some browsers may block redirects due to security policies.
+
+2. **Test Using `curl`**  
+   You can test the redirect by making a request directly from the terminal using `curl`. This bypasses browser-related issues.
+
+   Example:
+   ```bash
+   curl -i http://127.0.0.1:8080/short_id
+   ```
+
+3. **Use Postman**  
+   Another option is to test the redirect using [Postman](https://www.postman.com/), which ignores CORS policies and provides better control over the request.
+
+4. **Disable Browser Security (For Development Purposes Only)**  
+   If you're testing locally and certain security policies interfere, you can disable them temporarily:
+
+   - **Google Chrome**: Open Chrome with the following command:
+     ```bash
+     open -n -a "Google Chrome" --args --disable-web-security --user-data-dir=/tmp/chrome_dev
+     ```
+     *Note: Use this only in a development environment.*

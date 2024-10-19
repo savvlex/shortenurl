@@ -67,8 +67,4 @@ async def original_exists(data: str, session: AsyncSession) -> str:
         select(ShortUrl).where(ShortUrl.url == data)
     )
     db_object = result.scalars().first()
-    if not db_object:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=NOT_FOUND_MESSAGE
-        )
     return db_object
