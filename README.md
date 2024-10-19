@@ -56,3 +56,39 @@ This project follows a modular architecture to ensure clean separation of concer
 
 - **`services/`**  
   Contains utility functions and helper logic (e.g., `utils.py`).
+
+
+## Endpoints
+
+### POST /
+Create a short URL.
+
+- **Response**: 201 Created  
+- **Request Body**:
+```json
+{
+  "url": "https://example.com"
+}
+```
+- **Response Example**:
+```json
+{
+  "url": "https://example.com",
+  "short": "abc123"
+}
+```
+
+### GET /{short}
+Redirect to the original URL.
+
+- **Response**: 307 Temporary Redirect  
+- **Path Parameter**:
+  - `short`: The shortened URL identifier (e.g., `abc123`).
+
+- **Example**:  
+  Request:
+  ```
+  GET /abc123
+  ```
+
+  Response: Redirects to `https://example.com`
