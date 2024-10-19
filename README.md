@@ -16,15 +16,19 @@ Simple servise that allows to create short links for URLs. Also allows redirecti
 
 ## Installation and Usage
 1. Clone repository
+
 `git clone git@github.com:savvlex/shortenurl.git`
 
 2. Install venv
+
 `python3 -m venv venv`
 
 3. Install depencies
+
 `pip install -r requirements.txt`
 
 4. Start app on port 8080 (or any different port)
+
 `uvicorn app.main:app --reload --port 8080`
 
 5. Follow to http://127.0.0.1:8080/docs
